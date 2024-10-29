@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hotel Website</title>
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <!-- swiper js cdn link -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- custom css link -->
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <!-- header -->
+
+   <header class="header">
+
+      <a href="#" class="logo"> <i class="fas fa-hotel"></i> hotel Encantado </a>
+
+      <nav class="navbar">
+         <a href="#home">home</a>
+         <a href="#about">sobre nós</a>
+         <a href="#room">quartos</a>
+         <a href="#gallery">galeria</a>
+         <a href="#review">avaliações</a>
+         <a href="#reservation" class="btn"> reserva</a>
+      </nav>
+
+      <div id="menu-btn" class="fas fa-bars"></div>
+
+   </header>
+
+   <!-- end -->
+
+   <!-- home -->
+
+   <section class="home" id="home">
+
+      <div class="swiper home-slider">
+
+         <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide" style="background: url(images/tropical.jpg) no-repeat;">
+               <div class="content">
+                  <h3>Onde os sonhos se tornam realidade</h3>
+                  <a href="#" class="btn"> reserve</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url(images/tropiucal.jpg) no-repeat;">
+               <div class="content">
+                  <h3>Onde os sonhos se tornam realidade</h3>
+                  <a href="#" class="btn"> reserve</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url(images/beach2.jpg) no-repeat;">
+               <div class="content">
+                  <h3>Onde os sonhos se tornam realidade</h3>
+                  <a href="#" class="btn"> reserve</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url(images/beach1.jpg) no-repeat;">
+               <div class="content">
+                  <h3>Onde os sonhos se tornam realidade</h3>
+                  <a href="#" class="btn"> reserve</a>
+               </div>
+            </div>
+
+         </div>
+
+         <div class="swiper-button-next"></div>
+         <div class="swiper-button-prev"></div>
+
+      </div>
+
+   </section>
+
+   <!-- end -->
+
+   <!-- availability -->
+
+   <section class="availability">
+
+      <form action="">
+
+         <div class="box">
+            <p>check in <span>*</span></p>
+            <input type="date" class="input">
+         </div>
+
+         <div class="box">
+            <p>check out <span>*</span></p>
+            <input type="date" class="input">
+         </div>
+
+         <div class="box">
+            <p>adultos <span>*</span></p>
+            <select name="adultos" id="" class="input">
+               <option value="1">1 adultos</option>
+               <option value="2">2 adultos</option>
+               <option value="3">3 adultos</option>
+               <option value="4">4 adultos</option>
+               <option value="5">5 adultos</option>
+               <option value="6">6 adultos</option>
+            </select>
+         </div>
+
+         <div class="box">
+            <p>crianças <span>*</span></p>
+            <select name="crianças" id="" class="input">
+               <option value="1">1 criança</option>
+               <option value="2">2 crianças</option>
+               <option value="3">3 crianças</option>
+               <option value="4">4 crianças</option>
+               <option value="5">5 crianças</option>
+               <option value="6">6 crianças</option>
+            </select>
+         </div>
+
+         <div class="box">
+            <p>quartos <span>*</span></p>
+            <select name="quartos" id="" class="input">
+               <option value="1">1 quarto</option>
+               <option value="2">2 quartos</option>
+               <option value="3">3 quartos</option>
+               <option value="4">4 quartos</option>
+               <option value="5">5 quartos</option>
+               <option value="6">6 quartos</option>
+            </select>
+         </div>
+
+         <input type="submit" value="check a disponiobilidade" class="btn">
+
+      </form>
+
+   </section>
+
+   <!-- end -->
+
+   <!-- room -->
+
+   <section class="room" id="quarto">
+
+      <h1 class="heading">nossos quartos</h1>
+
+      <div class="swiper room-slider">
+
+         <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <span class="price">R$800/diária</span>
+                  <img src="images/executive.jpg" alt="">
+                  <a href="#" class="fas fa-shopping-cart"></a>
+               </div>
+               <div class="content">
+                  <h3>Quarto Executivo</h3>
+                  <p>Um espaço elegante e bem equipado, perfeito para viajantes a trabalho. Oferece uma cama queen size, mesa de trabalho, acesso à internet de alta velocidade e vistas parciais para o mar. Acomoda até 2 pessoas..</p>
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <a href="#" class="btn">reserve</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <span class="price">R$3.500/diária</span>
+                  <img src="images/exclusive.jfif" alt="">
+                  <a href="#" class="fas fa-shopping-cart"></a>
+               </div>
+               <div class="content">
+                  <h3>Bangalô na Praia</h3>
+                  <p>Um bangalô privativo à beira-mar, com espaço interno amplo, varanda com rede e chuveiro ao ar livre. Perfeito para quem busca privacidade e conexão com a natureza. Acomoda até 4 pessoas.</p>
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                  </div>
+                  <a href="#" class="btn">reserve</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <span class="price">R$2.850/diária</span>
+                  <img src="images/exclusive2.jfif" alt="">
+                  <a href="#" class="fas fa-shopping-cart"></a>
+               </div>
+               <div class="content">
+                  <h3>Quarto Luxo</h3>
+                  <p>Uma experiência de alto padrão com uma cama king size, varanda privativa com vista panorâmica do mar e banheira de hidromassagem. Decoração sofisticada e amenities de primeira linha. Acomoda até 2 pessoas.</p>
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                  </div>
+                  <a href="#" class="btn">reserve</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <span class="price">R$1.800/diária</span>
+                  <img src="images/home-slide4.jpg" alt="">
+                  <a href="#" class="fas fa-shopping-cart"></a>
+               </div>
+               <div class="content">
+                  <h3>Quarto Premium</h3>
+                  <p> Este quarto espaçoso possui uma cama king size, varanda com rede e uma decoração que combina o conforto à elegância. Ideal para relaxar após um dia de praia, oferece acesso a áreas exclusivas do resort. Acomoda até 3 pessoas..</p>
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <a href="#" class="btn">reserve</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <span class="price">R$1000/diária</span>
+                  <img src="images/room-2.jpg" alt="">
+                  <a href="#" class="fas fa-shopping-cart"></a>
+               </div>
+               <div class="content">
+                  <h3>Quarto Executivo Vista Mar</h3>
+                  <p>Confortável e elegante, este quarto tem cama queen size e vistas deslumbrantes do oceano. Oferece mesa de trabalho e varanda para relaxar. Acomoda até 2 pessoas, ideal para lazer ou trabalho.</p>
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <a href="#" class="btn">reserve</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <span class="price">R$1.200/diária</span>
+                  <img src="images/room-3.jpg" alt="">
+                  <a href="#" class="fas fa-shopping-cart"></a>
+               </div>
+               <div class="content">
+                  <h3>Quarto Família</h3>
+                  <p>Ideal para famílias, este quarto conta com uma cama king size e um sofá-camas. Com decoração acolhedora e espaço extra, possui área para brincadeiras e um mini-frigorífico. Acomoda até 4 pessoas.</p>
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <a href="#" class="btn">reserve</a>
+               </div>
+            </div>
+
+         </div>
+
+         <div class="swiper-pagination"></div>
+
+      </div>
+
+   </section>
+
+   <!-- end -->
+ <!-- about -->
+
+   <section class="about" id="about">
+
+      <div class="row">
+
+         <div class="image">
+            <img src="images/externo.jpg" alt="">
+         </div>
+
+         <div class="content">
+            <h3>Sobre Nós</h3>
+            <p>Localizado na Praia de Trancosa, na Bahia, o Hotel Encantado é um resort all inclusive com mais de 50 anos de história. Fundado por quatro amigos apaixonados por viagens, o hotel combina luxo e a beleza natural da ilha, oferecendo uma experiência memorável aos hóspedes.</p>
+            <p>Com uma culinária que destaca ingredientes locais e atividades diversificadas, como mergulho e trilhas, o Hotel Encantado se tornou um destino ideal para relaxamento e aventura. Hoje, é reconhecido pela excelência em hospitalidade, onde cada visitante é tratado como parte da família.</p>
+         </div>
+
+      </div>
+
+   </section>
+
+   <!-- end -->
+   <!-- services -->
+
+   <section class="services">
+
+      <div class="box-container">
+
+         <div class="box">
+            <img src="images/piscina.png" alt="">
+            <h3>piscina</h3>
+         </div>
+
+         <div class="box">
+            <img src="images/prato.png" alt="">
+            <h3>food & drink</h3>
+         </div>
+
+         <div class="box">
+            <img src="images/servindo-comida.png" alt="">
+            <h3>restaurante</h3>
+         </div>
+
+         <div class="box">
+            <img src="images/exercicio.png" alt="">
+            <h3>fitness</h3>
+         </div>
+
+         <div class="box">
+            <img src="images/massagem.png" alt="">
+            <h3>spa</h3>
+         </div>
+
+         <div class="box">
+            <img src="images/de-praia.png" alt="">
+            <h3>praia</h3>
+         </div>
+
+      </div>
+
+   </section>
+
+   <!-- end -->
+
+   <!-- review -->
+
+   <section class="review" id="review">
+
+      <div class="swiper review-slider">
+         <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+               <h2 class="heading">Avaliações</h2>
+               <i class="fas fa-quote-right"></i>
+              <p>O resort oferece uma experiência de luxo incomparável, com quartos espaçosos e bem decorados. As comodidades, como spa e piscina infinita, são de tirar o fôlego. A equipe é atenciosa e sempre pronta para ajudar.</p>
+               <div class="user">
+                  <i class="fas fa-user"></i>
+                  <div class="user-info">
+                     <h3>Marina Trindade</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <h2 class="heading">Avaliações</h2>
+               <i class="fas fa-quote-right"></i>
+               <p>Os restaurantes do resort são de alta qualidade, com pratos que combinam sabores locais e internacionais. O serviço é impecável, e a experiência gastronômica à beira-mar é simplesmente divina.</p>
+               <div class="user">
+                  <i class="fas fa-user"></i>
+                  <div class="user-info">
+                     <h3>Carol Liberman</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <h2 class="heading">Avaliações</h2>
+               <i class="fas fa-quote-right"></i>
+               <p>O resort oferece uma variedade de atividades, desde esportes aquáticos até aulas de culinária. Embora a maioria das opções seja excelente, algumas podem estar sujeitas a disponibilidade. Ideal para famílias e casais.</p>
+               <div class="user">
+                  <i class="fas fa-user"></i>
+                  <div class="user-info">
+                     <h3>João Amorim</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <h2 class="heading">Avaliações</h2>
+               <i class="fas fa-quote-right"></i>
+               <p>Situado em uma praia paradisíaca, o resort proporciona vistas deslumbrantes do pôr do sol. A proximidade com atrações turísticas torna a estadia ainda mais atraente.</p>
+               <div class="user">
+                  <i class="fas fa-user"></i>
+                  <div class="user-info">
+                     <h3>Leo Maximo</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <h2 class="heading">Avaliações</h2>
+               <i class="fas fa-quote-right"></i>
+               <p>Embora seja um resort de luxo, os pacotes oferecidos são competitivos. Os serviços inclusos, como refeições e atividades, fazem valer a experiência, mas é bom reservar com antecedência para garantir as melhores tarifas.</p>               
+               <div class="user">
+                  <i class="fas fa-user"></i>
+                  <div class="user-info">
+                     <h3>Gabriel Melo</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+         <div class="swiper-pagination"></div>
+      </div>
+
+   </section>
+
+   <!-- end -->
+
+   <section class="gallery" id="gallery">
+
+      <h1 class="heading">nossa galeria</h1>
+
+      <div class="swiper gallery-slider">
+
+         <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+               <img src="images/jantar.jpg" alt="">
+               <div class="icon">
+                  <i class="fas fa-magnifying-glass-plus"></i>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <img src="images/steak-3766548_1280.jpg" alt="">
+               <div class="icon">
+                  <i class="fas fa-magnifying-glass-plus"></i>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <img src="images/casal.jfif" alt="">
+               <div class="icon">
+                  <i class="fas fa-magnifying-glass-plus"></i>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <img src="images/family.jpg" alt="">
+               <div class="icon">
+                  <i class="fas fa-magnifying-glass-plus"></i>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <img src="images/review (2).jpg" alt="">
+               <div class="icon">
+                  <i class="fas fa-magnifying-glass-plus"></i>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <img src="images/martini-glass-623438_1280.jpg" alt="">
+               <div class="icon">
+                  <i class="fas fa-magnifying-glass-plus"></i>
+               </div>
+            </div>
+
+         </div>
+
+      </div>
+
+   </section>
+   <!-- reservation -->
+
+   <section class="reservation" id="reservation">
+
+      <h1 class="heading">Reserve</h1>
+
+      <form action="">
+
+         <div class="container">
+
+            <div class="box">
+               <p>name <span>*</span></p>
+               <input type="text" class="input" placeholder="Your Name">
+            </div>
+
+            <div class="box">
+               <p>email <span>*</span></p>
+               <input type="text" class="input" placeholder="Your Email">
+            </div>
+
+            <div class="box">
+               <p>check in <span>*</span></p>
+               <input type="date" class="input">
+            </div>
+
+            <div class="box">
+               <p>check out <span>*</span></p>
+               <input type="date" class="input">
+            </div>
+
+            <div class="box">
+               <p>adultos <span>*</span></p>
+               <select name="adultos" class="input">
+                  <option value="1">1 adulto</option>
+                  <option value="2">2 adultos</option>
+                  <option value="3">3 adultos</option>
+                  <option value="4">4 adultos</option>
+                  <option value="5">5 adultos</option>
+                  <option value="6">6 adultos</option>
+               </select>
+            </div>
+
+            <div class="box">
+               <p>crianças <span>*</span></p>
+               <select name="crianças" class="input">
+                  <option value="1">1 criança</option>
+                  <option value="2">2 crianças</option>
+                  <option value="3">3 crianças</option>
+                  <option value="4">4 crianças</option>
+                  <option value="5">5 crianças</option>
+                  <option value="6">6 crianças</option>
+               </select>
+            </div>
+
+            <div class="box">
+               <p>quartos <span>*</span></p>
+               <select name="quartos" class="input">
+                  <option value="1">1 quarto</option>
+                  <option value="2">2 quartos</option>
+                  <option value="3">3 quartos</option>
+                  <option value="4">4 quartos</option>
+                  <option value="5">5 quartos</option>
+                  <option value="6">6 quartos</option>
+               </select>
+            </div>
+
+            <div class="box">
+               <p>Tipo do Quarto <span>*</span></p>
+               <select name="type" class="input">
+                  <option value="1">quarto executivo</option>
+                  <option value="2">quarto executivo vista mar</option>
+                  <option value="3">quarto familia</option>
+                  <option value="4">quarto premium</option>
+                  <option value="5">quarto luxo</option>
+                  <option value="6">bangâlo praiano</option>
+               </select>
+            </div>
+   
+         </div>
+
+         <input type="submit" value="reserve" class="btn">
+
+      </form>
+
+   </section>
+
+   <!-- end -->
+
+   <!-- footer -->
+
+   <section class="footer">
+
+      <div class="box-container">
+
+         <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +123-456-789 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +123-456-789</a>
+            <a href="#"> <i class="fas fa-envelope"></i> hotelencantado@gmail.com</a>
+            <a href="#"> <i class="fas fa-map"></i> Trancoso, Bahia</a>
+         </div>
+
+         <div class="box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> home</a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> about</a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> quartos</a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> galeria</a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> reserva</a>
+         </div>
+      </div>
+
+      <div class="share">
+         <a href="#" class="fab fa-facebook-f"></a>
+         <a href="#" class="fab fa-instagram"></a>
+         <a href="#" class="fab fa-twitter"></a>
+         <a href="#" class="fab fa-pinterest"></a>
+      </div>
+
+
+   </section>
+
+   <!-- end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+   <script src="script.js"></script>
+
+</body>
+</html>
