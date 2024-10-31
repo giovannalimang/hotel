@@ -5,14 +5,16 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Hotel Website</title>
+   <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+   <!-- swiper js cdn link -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
- 
+    <!-- custom css link -->
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+   <!-- header -->
 
    <header class="header">
 
@@ -30,6 +32,10 @@
       <div id="menu-btn" class="fas fa-bars"></div>
 
    </header>
+
+   <!-- end -->
+
+   <!-- home -->
 
    <section class="home" id="home">
 
@@ -73,6 +79,10 @@
       </div>
 
    </section>
+
+   <!-- end -->
+
+   <!-- availability -->
 
    <section class="availability">
 
@@ -129,6 +139,10 @@
       </form>
 
    </section>
+
+   <!-- end -->
+
+   <!-- room -->
 
    <section class="room" id="quarto">
 
@@ -266,6 +280,9 @@
 
    </section>
 
+   <!-- end -->
+ <!-- about -->
+
    <section class="about" id="about">
 
       <div class="row">
@@ -284,6 +301,8 @@
 
    </section>
 
+   <!-- end -->
+   <!-- services -->
 
    <section class="services">
 
@@ -322,6 +341,10 @@
       </div>
 
    </section>
+
+   <!-- end -->
+
+   <!-- review -->
 
    <section class="review" id="review">
 
@@ -429,6 +452,7 @@
 
    </section>
 
+   <!-- end -->
 
    <section class="gallery" id="gallery">
 
@@ -485,90 +509,93 @@
       </div>
 
    </section>
+   <!-- reservation -->
 
    <section class="reservation" id="reservation">
 
       <h1 class="heading">Reserve</h1>
 
-      <form action="">
+      <form id="reservaForm">
+          <div class="container">
+              <div class="box">
+                  <p>name <span>*</span></p>
+                  <input type="text" class="input" id="nomeReserva" placeholder="Seu nome">
+              </div>
 
-         <div class="container">
+              <div class="box">
+                  <p>email <span>*</span></p>
+                  <input type="text" class="input" id="emailReserva" placeholder="Seu email">
+              </div>
 
-            <div class="box">
-               <p>name <span>*</span></p>
-               <input type="text" class="input" placeholder="Your Name">
-            </div>
+              <div class="box">
+                  <p>check in <span>*</span></p>
+                  <input type="date" class="input" id="datacheckin">
+              </div>
 
-            <div class="box">
-               <p>email <span>*</span></p>
-               <input type="text" class="input" placeholder="Your Email">
-            </div>
+              <div class="box">
+                  <p>check out <span>*</span></p>
+                  <input type="date" class="input" id="datacheckout">
+              </div>
 
-            <div class="box">
-               <p>check in <span>*</span></p>
-               <input type="date" class="input">
-            </div>
+              <div class="box">
+                  <p>adultos <span>*</span></p>
+                  <select name="adultos" class="input" id="adultosReserva">
+                      <option value="1">1 adulto</option>
+                      <option value="2">2 adultos</option>
+                      <option value="3">3 adultos</option>
+                      <option value="4">4 adultos</option>
+                      <option value="5">5 adultos</option>
+                      <option value="6">6 adultos</option>
+                  </select>
+              </div>
 
-            <div class="box">
-               <p>check out <span>*</span></p>
-               <input type="date" class="input">
-            </div>
+              <div class="box">
+                  <p>crianças <span>*</span></p>
+                  <select name="crianças" class="input" id="crianca">
+                      <option value="0">0 criança</option>
+                      <option value="1">1 criança</option>
+                      <option value="2">2 crianças</option>
+                      <option value="3">3 crianças</option>
+                      <option value="4">4 crianças</option>
+                      <option value="5">5 crianças</option>
+                      <option value="6">6 crianças</option>
+                  </select>
+              </div>
 
-            <div class="box">
-               <p>adultos <span>*</span></p>
-               <select name="adultos" class="input">
-                  <option value="1">1 adulto</option>
-                  <option value="2">2 adultos</option>
-                  <option value="3">3 adultos</option>
-                  <option value="4">4 adultos</option>
-                  <option value="5">5 adultos</option>
-                  <option value="6">6 adultos</option>
-               </select>
-            </div>
+              <div class="box">
+                  <p>quartos <span>*</span></p>
+                  <select name="quartos" class="input" id="quarto">
+                      <option value="1">1 quarto</option>
+                      <option value="2">2 quartos</option>
+                      <option value="3">3 quartos</option>
+                      <option value="4">4 quartos</option>
+                      <option value="5">5 quartos</option>
+                      <option value="6">6 quartos</option>
+                  </select>
+              </div>
 
-            <div class="box">
-               <p>crianças <span>*</span></p>
-               <select name="crianças" class="input">
-                  <option value="1">1 criança</option>
-                  <option value="2">2 crianças</option>
-                  <option value="3">3 crianças</option>
-                  <option value="4">4 crianças</option>
-                  <option value="5">5 crianças</option>
-                  <option value="6">6 crianças</option>
-               </select>
-            </div>
+              <div class="box">
+                  <p>Tipo do Quarto <span>*</span></p>
+                  <select name="type" class="input" id="tipo">
+                      <option value="executivo">quarto executivo</option>
+                      <option value="executivo_vista_mar">quarto executivo vista mar</option>
+                      <option value="familia">quarto familia</option>
+                      <option value="premium">quarto premium</option>
+                      <option value="luxo">quarto luxo</option>
+                      <option value="praiano">bangâlo praiano</option>
+                  </select>
+                  <div id="vazia"></div>
+              </div>
+          </div>
 
-            <div class="box">
-               <p>quartos <span>*</span></p>
-               <select name="quartos" class="input">
-                  <option value="1">1 quarto</option>
-                  <option value="2">2 quartos</option>
-                  <option value="3">3 quartos</option>
-                  <option value="4">4 quartos</option>
-                  <option value="5">5 quartos</option>
-                  <option value="6">6 quartos</option>
-               </select>
-            </div>
-
-            <div class="box">
-               <p>Tipo do Quarto <span>*</span></p>
-               <select name="type" class="input">
-                  <option value="1">quarto executivo</option>
-                  <option value="2">quarto executivo vista mar</option>
-                  <option value="3">quarto familia</option>
-                  <option value="4">quarto premium</option>
-                  <option value="5">quarto luxo</option>
-                  <option value="6">bangâlo praiano</option>
-               </select>
-            </div>
-   
-         </div>
-
-         <input type="submit" value="reserve" class="btn">
-
+          <input type="button" value="reserve" class="btn" onclick="AdicionarReserva()">
       </form>
+      <div id="resultadoReserva"></div>
+  </section>
+  
+   <!-- end -->
 
-   </section>
+   <!-- footer -->
 
    <section class="footer">
 
@@ -605,6 +632,10 @@
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
    <script src="script.js"></script>
+   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+ 
+   <script src="script2.js"></script>
+ 
 
 </body>
 </html>
