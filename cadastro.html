@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div class="form">
+        <form action="#">
+            <div class="form-header">
+                <div class="title">
+                    <h1>Cadastre-se</h1>
+                </div>
+                <div class="login-button">
+                    <button>Entrar</button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="firstname"> Nome</label>
+                    <input id="nome" type="text" name="nome" placeholder="Digite seu primeiro nome" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="endereco">Endereço</label>
+                    <input id="endereco" type="text" name="endereco" placeholder="Digite seu endereço" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="contato">E-mail</label>
+                    <input id="contato" type="email" name="contato" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="id">CPF</label>
+                    <input id="id" type="number" name="id" placeholder="Digite seu CPF" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="acompanhantes">Quantidade de acompanhantes</label>
+                    <input id="acompanhantes" type="number" name="acompanhantes" placeholder="Quantidade de acompanhantes"  min=0 required>
+                </div>
+
+                <div class="input-box">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
+                </div>
+            </div>
+
+            
+            <div class="continue-button">
+                <button type="submit" onclick="Cadastro()">Continuar</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
