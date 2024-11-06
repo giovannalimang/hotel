@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,19 +7,15 @@
     <link rel="stylesheet" href="cadastro.css">
     <title>Cadastro</title>
 </head>
-
 <body>
     <div class="form">
-        <form action="#">
+        <form onsubmit="return Cadastro();"> <!-- Chama a função Cadastro ao enviar -->
             <div class="form-header">
                 <div class="title">
                     <h1>Cadastre-se</h1>
                 </div>
-                <div class="login-button">
-                    <button>Entrar</button>
-                </div>
             </div>
-
+            <a href="login.html" class="btn">Tela-Login</a>
             <div class="input-group">
                 <div class="input-box">
                     <label for="firstname"> Nome</label>
@@ -44,7 +39,7 @@
 
                 <div class="input-box">
                     <label for="acompanhantes">Quantidade de acompanhantes</label>
-                    <input id="acompanhantes" type="number" name="acompanhantes" placeholder="Quantidade de acompanhantes"  min=0 required>
+                    <input id="acompanhantes" type="number" name="acompanhantes" placeholder="Quantidade de acompanhantes" min="0" required>
                 </div>
 
                 <div class="input-box">
@@ -53,13 +48,12 @@
                 </div>
             </div>
 
-            
             <div class="continue-button">
-                <button type="submit" onclick="Cadastro()">Continuar</button>
+                <button type="button" onclick="Cadastro()">Continuar</button> <!-- Mantenha o tipo submit -->
             </div>
         </form>
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>
+
