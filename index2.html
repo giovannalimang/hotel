@@ -5,8 +5,11 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Hotel Website</title>
+   <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <!-- swiper js cdn link -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- custom css link -->
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,6 +27,7 @@
          <a href="#gallery">galeria</a>
          <a href="#review">avaliações</a>
          <a href="#reservation" class="btn"> reserva</a>
+         <a href="logout.html" class="btn">logout</a>
       </nav>
 
       <div id="menu-btn" class="fas fa-bars"></div>
@@ -43,28 +47,28 @@
             <div class="swiper-slide slide" style="background: url(images/tropical.jpg) no-repeat;">
                <div class="content">
                   <h3>Onde os sonhos se tornam realidade</h3>
-                  <a href="#" class="btn"> reserve</a>
+                  <a href="#reservation" class="btn"> reserve</a>
                </div>
             </div>
 
             <div class="swiper-slide slide" style="background: url(images/tropiucal.jpg) no-repeat;">
                <div class="content">
                   <h3>Onde os sonhos se tornam realidade</h3>
-                  <a href="#" class="btn"> reserve</a>
+                  <a href="#reservation" class="btn"> reserve</a>
                </div>
             </div>
 
             <div class="swiper-slide slide" style="background: url(images/beach2.jpg) no-repeat;">
                <div class="content">
                   <h3>Onde os sonhos se tornam realidade</h3>
-                  <a href="#" class="btn"> reserve</a>
+                  <a href="#reservation" class="btn"> reserve</a>
                </div>
             </div>
 
             <div class="swiper-slide slide" style="background: url(images/beach1.jpg) no-repeat;">
                <div class="content">
                   <h3>Onde os sonhos se tornam realidade</h3>
-                  <a href="#" class="btn"> reserve</a>
+                  <a href="#reservation" class="btn"> reserve</a>
                </div>
             </div>
 
@@ -87,51 +91,64 @@
 
          <div class="box">
             <p>check in <span>*</span></p>
-            <input type="date" class="input">
-         </div>
+            <input type="date" class="input" id="datacheckin1">
+        </div>
 
-         <div class="box">
+        <div class="box">
             <p>check out <span>*</span></p>
-            <input type="date" class="input">
-         </div>
+            <input type="date" class="input" id="datacheckout1">
+        </div>
 
-         <div class="box">
+        <div class="box">
             <p>adultos <span>*</span></p>
-            <select name="adultos" id="" class="input">
-               <option value="1">1 adultos</option>
-               <option value="2">2 adultos</option>
-               <option value="3">3 adultos</option>
-               <option value="4">4 adultos</option>
-               <option value="5">5 adultos</option>
-               <option value="6">6 adultos</option>
+            <select name="adultos" class="input" id="adultosReserva1">
+                <option value="1">1 adulto</option>
+                <option value="2">2 adultos</option>
+                <option value="3">3 adultos</option>
+                <option value="4">4 adultos</option>
+                <option value="5">5 adultos</option>
+                <option value="6">6 adultos</option>
             </select>
-         </div>
+        </div>
 
-         <div class="box">
+        <div class="box">
             <p>crianças <span>*</span></p>
-            <select name="crianças" id="" class="input">
-               <option value="1">1 criança</option>
-               <option value="2">2 crianças</option>
-               <option value="3">3 crianças</option>
-               <option value="4">4 crianças</option>
-               <option value="5">5 crianças</option>
-               <option value="6">6 crianças</option>
+            <select name="crianças" class="input" id="crianca1">
+                <option value="0">0 criança</option>
+                <option value="1">1 criança</option>
+                <option value="2">2 crianças</option>
+                <option value="3">3 crianças</option>
+                <option value="4">4 crianças</option>
+                <option value="5">5 crianças</option>
+                <option value="6">6 crianças</option>
             </select>
-         </div>
+        </div>
 
-         <div class="box">
+        <div class="box">
             <p>quartos <span>*</span></p>
-            <select name="quartos" id="" class="input">
-               <option value="1">1 quarto</option>
-               <option value="2">2 quartos</option>
-               <option value="3">3 quartos</option>
-               <option value="4">4 quartos</option>
-               <option value="5">5 quartos</option>
-               <option value="6">6 quartos</option>
+            <select name="quartos" class="input" id="quarto1">
+                <option value="1">1 quarto</option>
+                <option value="2">2 quartos</option>
+                <option value="3">3 quartos</option>
+                <option value="4">4 quartos</option>
+                <option value="5">5 quartos</option>
+                <option value="6">6 quartos</option>
             </select>
-         </div>
+        </div>
 
-         <input type="submit" value="check a disponiobilidade" class="btn">
+        <div class="box">
+            <p>Tipo do Quarto <span>*</span></p>
+            <select name="type" class="input" id="tipo1">
+                <option value="executivo">quarto executivo</option>
+                <option value="executivo_vista_mar">quarto executivo vista mar</option>
+                <option value="familia">quarto familia</option>
+                <option value="premium">quarto premium</option>
+                <option value="luxo">quarto luxo</option>
+                <option value="praiano">bangâlo praiano</option>
+            </select>
+            <div id="vazia1" class="container"></div>
+
+         <input type="button" value="check a disponibilidade" class="btn" onclick="EstaDisponivel_print()">
 
       </form>
 
@@ -153,7 +170,7 @@
                <div class="image">
                   <span class="price">R$800/diária</span>
                   <img src="images/executive.jpg" alt="">
-                  <a href="#" class="fas fa-shopping-cart"></a>
+                  <a href="reservation" class="fas fa-shopping-cart"></a>
                </div>
                <div class="content">
                   <h3>Quarto Executivo</h3>
@@ -165,7 +182,7 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <a href="#" class="btn">reserve</a>
+                  <a href="reservation" class="btn">reserve</a>
                </div>
             </div>
 
@@ -185,7 +202,7 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star"></i>
                   </div>
-                  <a href="#" class="btn">reserve</a>
+                  <a href="reservation" class="btn">reserve</a>
                </div>
             </div>
 
@@ -205,7 +222,7 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star"></i>
                   </div>
-                  <a href="#" class="btn">reserve</a>
+                  <a href="reservation" class="btn">reserve</a>
                </div>
             </div>
 
@@ -225,7 +242,7 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <a href="#" class="btn">reserve</a>
+                  <a href="reservation" class="btn">reserve</a>
                </div>
             </div>
 
@@ -233,7 +250,7 @@
                <div class="image">
                   <span class="price">R$1000/diária</span>
                   <img src="images/room-2.jpg" alt="">
-                  <a href="#" class="fas fa-shopping-cart"></a>
+                  <a href="reservation" class="fas fa-shopping-cart"></a>
                </div>
                <div class="content">
                   <h3>Quarto Executivo Vista Mar</h3>
@@ -245,7 +262,7 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <a href="#" class="btn">reserve</a>
+                  <a href="reservation" class="btn">reserve</a>
                </div>
             </div>
 
@@ -265,7 +282,7 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <a href="#" class="btn">reserve</a>
+                  <a href="reservation" class="btn">reserve</a>
                </div>
             </div>
 
@@ -334,7 +351,6 @@
             <img src="images/de-praia.png" alt="">
             <h3>praia</h3>
          </div>
-
       </div>
 
    </section>
@@ -412,7 +428,7 @@
                <div class="user">
                   <i class="fas fa-user"></i>
                   <div class="user-info">
-                     <h3>Leo Maximo</h3>
+                     <h3>Leonardo Maximino</h3>
                      <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -526,12 +542,12 @@
 
               <div class="box">
                   <p>check in <span>*</span></p>
-                  <input type="date" class="input" id="datacheckin">
+                  <input type="date" class="input" id="checkin">
               </div>
 
               <div class="box">
                   <p>check out <span>*</span></p>
-                  <input type="date" class="input" id="datacheckout">
+                  <input type="date" class="input" id="checkout">
               </div>
 
               <div class="box">
@@ -581,14 +597,33 @@
                       <option value="luxo">quarto luxo</option>
                       <option value="praiano">bangâlo praiano</option>
                   </select>
-                  <div id="vazia"></div>
               </div>
+              <div class="box">
+               <p>Escolha o seu pacote de serviços <span>*</span></p>
+               <select name="type" class="input" id="service">
+                   <option value="basic">Basic-Restaurante incluso</option>
+                   <option value="premium">Premium-Restaurante e Academia inclusos</option>
+                   <option value="premium plus">Premium Plus-Restaurante, Academia e piscina inclusos</option>
+                   <option value="ultra">Ultra-Restaurante, Academia, piscina e Food & Drink inclusos</option>
+                   <option value="ultra plus">Ultra Plus-Restaurante, Academia, piscina, Food & Drink e praia inclusos</option>
+                   <option value="max">Max-Tudo incluso</option>
+               </select>
+               <div id="vazia"></div>
+           </div>
+              
           </div>
 
           <input type="button" value="reserve" class="btn" onclick="AdicionarReserva()">
       </form>
       <div id="resultadoReserva"></div>
   </section>
+  <form id="teste">
+   <div class="container">
+       
+   </div>
+
+   <input type="button" value="testar" class="btn" onclick="Teste()">
+   </form>
   
    <!-- end -->
 
