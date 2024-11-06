@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>FALSOe</title>
+   <title>Hotel</title>
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
    <!-- swiper js cdn link -->
@@ -46,28 +46,28 @@
             <div class="swiper-slide slide" style="background: url(images/tropical.jpg) no-repeat;">
                <div class="content">
                   <h3>Onde os sonhos se tornam realidade</h3>
-                  <p>Reserva</p>
+                  <a href="login.html" class="btn"> reserve</a>
                </div>
             </div>
 
             <div class="swiper-slide slide" style="background: url(images/tropiucal.jpg) no-repeat;">
                <div class="content">
                   <h3>Onde os sonhos se tornam realidade</h3>
-                  <p>reserva</p>
+                  <a href="login.html" class="btn"> reserve</a>
                </div>
             </div>
 
             <div class="swiper-slide slide" style="background: url(images/beach2.jpg) no-repeat;">
                <div class="content">
                   <h3>Onde os sonhos se tornam realidade</h3>
-                 <p>reserva</p>
+                  <a href="login.html" class="btn"> reserve</a>
                </div>
             </div>
 
             <div class="swiper-slide slide" style="background: url(images/beach1.jpg) no-repeat;">
                <div class="content">
                   <h3>Onde os sonhos se tornam realidade</h3>
-                  <p>reserva</p>
+                  <a href="login.html" class="btn"> reserve</a>
                </div>
             </div>
 
@@ -90,68 +90,72 @@
 
          <div class="box">
             <p>check in <span>*</span></p>
-            <input type="date" class="input">
-         </div>
+            <input type="date" class="input" id="datacheckin1">
+        </div>
 
-         <div class="box">
+        <div class="box">
             <p>check out <span>*</span></p>
-            <input type="date" class="input">
-         </div>
+            <input type="date" class="input" id="datacheckout1">
+        </div>
 
-         <div class="box">
+        <div class="box">
             <p>adultos <span>*</span></p>
-            <select name="adultos" id="" class="input">
-               <option value="1">1 adultos</option>
-               <option value="2">2 adultos</option>
-               <option value="3">3 adultos</option>
-               <option value="4">4 adultos</option>
-               <option value="5">5 adultos</option>
-               <option value="6">6 adultos</option>
+            <select name="adultos" class="input" id="adultosReserva1">
+                <option value="1">1 adulto</option>
+                <option value="2">2 adultos</option>
+                <option value="3">3 adultos</option>
+                <option value="4">4 adultos</option>
+                <option value="5">5 adultos</option>
+                <option value="6">6 adultos</option>
             </select>
-         </div>
+        </div>
 
-         <div class="box">
+        <div class="box">
             <p>crianças <span>*</span></p>
-            <select name="crianças" id="" class="input">
-               <option value="1">1 criança</option>
-               <option value="2">2 crianças</option>
-               <option value="3">3 crianças</option>
-               <option value="4">4 crianças</option>
-               <option value="5">5 crianças</option>
-               <option value="6">6 crianças</option>
+            <select name="crianças" class="input" id="crianca1">
+                <option value="0">0 criança</option>
+                <option value="1">1 criança</option>
+                <option value="2">2 crianças</option>
+                <option value="3">3 crianças</option>
+                <option value="4">4 crianças</option>
+                <option value="5">5 crianças</option>
+                <option value="6">6 crianças</option>
             </select>
-         </div>
+        </div>
 
-         <div class="box">
+        <div class="box">
             <p>quartos <span>*</span></p>
-            <select name="quartos" id="" class="input">
-               <option value="1">1 quarto</option>
-               <option value="2">2 quartos</option>
-               <option value="3">3 quartos</option>
-               <option value="4">4 quartos</option>
-               <option value="5">5 quartos</option>
-               <option value="6">6 quartos</option>
+            <select name="quartos" class="input" id="quarto1">
+                <option value="1">1 quarto</option>
+                <option value="2">2 quartos</option>
+                <option value="3">3 quartos</option>
+                <option value="4">4 quartos</option>
+                <option value="5">5 quartos</option>
+                <option value="6">6 quartos</option>
             </select>
-         </div>
+        </div>
 
-         <input type="submit" value="check a disponiobilidade" class="btn">
+        <div class="box">
+            <p>Tipo do Quarto <span>*</span></p>
+            <select name="type" class="input" id="tipo1">
+                <option value="executivo">quarto executivo</option>
+                <option value="executivo_vista_mar">quarto executivo vista mar</option>
+                <option value="familia">quarto familia</option>
+                <option value="premium">quarto premium</option>
+                <option value="luxo">quarto luxo</option>
+                <option value="praiano">bangâlo praiano</option>
+            </select>
+            <div id="vazia1" class="container"></div>
+
+         <input type="button" value="check a disponibilidade" class="btn" onclick="EstaDisponivel_print()">
 
       </form>
 
    </section>
-
-   <!-- end -->
-
-   <!-- room -->
-
    <section class="room" id="quarto">
-
       <h1 class="heading">nossos quartos</h1>
-
       <div class="swiper room-slider">
-
          <div class="swiper-wrapper">
-
             <div class="swiper-slide slide">
                <div class="image">
                   <span class="price">R$800/diária</span>
@@ -168,15 +172,14 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <p>reserva</p>
+                  <a href="login.html" class="btn">reserve</a>
                </div>
             </div>
-
             <div class="swiper-slide slide">
                <div class="image">
                   <span class="price">R$3.500/diária</span>
                   <img src="images/exclusive.jfif" alt="">
-                  <a href="#" class="fas fa-shopping-cart"></a>
+                  <a href="login.html" class="fas fa-shopping-cart"></a>
                </div>
                <div class="content">
                   <h3>Bangalô na Praia</h3>
@@ -188,10 +191,9 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star"></i>
                   </div>
-                 <p>reserva</p>>
+                  <a href="login.html" class="btn">reserve</a>
                </div>
             </div>
-
             <div class="swiper-slide slide">
                <div class="image">
                   <span class="price">R$2.850/diária</span>
@@ -208,7 +210,7 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star"></i>
                   </div>
-                  <p>reserva</p>>
+                  <a href="login.html" class="btn">reserve</a>
                </div>
             </div>
 
@@ -216,7 +218,7 @@
                <div class="image">
                   <span class="price">R$1.800/diária</span>
                   <img src="images/home-slide4.jpg" alt="">
-                  <a href="#" class="fas fa-shopping-cart"></a>
+                  <a href="login.html" class="fas fa-shopping-cart"></a>
                </div>
                <div class="content">
                   <h3>Quarto Premium</h3>
@@ -236,7 +238,7 @@
                <div class="image">
                   <span class="price">R$1000/diária</span>
                   <img src="images/room-2.jpg" alt="">
-                  <a href="#" class="fas fa-shopping-cart"></a>
+                  <a href="login.html" class="fas fa-shopping-cart"></a>
                </div>
                <div class="content">
                   <h3>Quarto Executivo Vista Mar</h3>
@@ -248,7 +250,7 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <p>reserva</p>
+                  <a href="login.html" class="btn">reserve</a>
                </div>
             </div>
 
@@ -268,7 +270,7 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half-alt"></i>
                   </div>
-                  <p>reserva</p>
+                  <a href="login.html" class="btn">reserve</a>
                </div>
             </div>
 
@@ -587,7 +589,7 @@
                   <div id="vazia"></div>
               </div>
           </div>
-          <p><reserva></p>
+          <a href="login.html" class="btn">Login</a>
       </form>
       <div id="resultadoReserva"></div>
   </section>
@@ -634,7 +636,5 @@
    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
  
    <script src="script2.js"></script>
- 
-
 </body>
 </html>
