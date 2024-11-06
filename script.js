@@ -281,7 +281,7 @@ function Login() {
         } else if (objeto.senha === senha) {
             alert(`Entrada com sucesso ${objeto.nome}`);
             SalvarDados()
-            window.location.href = 'index.html';
+            window.location.href = 'index2.html';
         } else {
             alert("Senha incorreta.");
         }
