@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Hotel Encantado</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="imagem">
+            <div class="mensagem" id="motivacionalLogin">
+                <h2></h2>
+            </div>
+            <div class="mensagem" id="motivacionalRegistro">
+                <h2>Seja bem-vindo!</h2>
+            </div>
+        </div>
+        <div id="vazia2"></div>
+
+        <div class="formulario">
+            <div class="conteudo-formulario">
+                <form id="login" class="formulario-visivel">
+                    <h2>Checkout</h2>
+                    <div class="icones">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <select name="type" class="input" id="tipo">
+                        <option value="executivo">quarto executivo</option>
+                        <option value="executivo_vista_mar">quarto executivo vista mar</option>
+                        <option value="familia">quarto familia</option>
+                        <option value="premium">quarto premium</option>
+                        <option value="luxo">quarto luxo</option>
+                        <option value="praiano">bangâlo praiano</option>
+                    </select>
+                    <input type="text" placeholder="CPF" id="CPF" required>
+                    <input type="text" placeholder="Número Quarto" id="NumQuarto" required>
+                    <input type="text" placeholder="Senha funcionario" id="SenhaFuncionario" required>
+                    <h3> Frigobar consumo</h3>
+                    <select name="type" class="input" id="kitkat">
+                        <option value="0">0 kitkat</option>
+                        <option value="7">1 kitkat</option>
+                        <option value="14">2 kitkat</option>
+                        <option value="21">3 kitkat</option>
+                    </select>
+                    <select name="type" class="input" id="coca">
+                        <option value="10">0 Coca</option>
+                        <option value="10">1 Coca</option>
+                        <option value="20">2 Coca</option>
+                        <option value="30">3 Coca</option>
+                    </select>
+                    <div class="login-button">
+                        <button type="button" onclick="Retirada()">Realizar logout</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
