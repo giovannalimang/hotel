@@ -255,7 +255,7 @@ function Encontrar_pessoa(identidade, senha) {
 function Encontrar_pessoa_pelo_nome(nome) {
     try {
         CarregarDados()
-        let x = lista_clientes.find(cliente => cliente.nome === nome) || null;
+        let x = lista_clientes.find(cliente => cliente.nome === nome);
         return x;
     } catch (error) {
         alert(`Ocorreu um erro durante a busca: ${error}`);
