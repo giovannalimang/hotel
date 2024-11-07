@@ -105,7 +105,7 @@ function CarregarDados() {
 
 // Chama a função verificarPaginaIndex() quando a página é carregada
 
-if (window.location.pathname.endsWith("index.html")) {
+if (window.location.pathname.endsWith("index2.html")) {
     CarregarDados(); // Chama a função CarregarDados() se estiver na página "index.html"
 };
 function Teste() {
@@ -221,7 +221,7 @@ if (1==1){
 
 function Cadastro() {
     try {
-        let nome = (document.getElementById("nome").value).toUpperCase()
+        let nome = document.getElementById("nome").value;
         let senha = document.getElementById("senha").value;
         let endereco = document.getElementById("endereco").value;
         let contato = document.getElementById("contato").value;
@@ -255,7 +255,7 @@ function Encontrar_pessoa(identidade, senha) {
 function Encontrar_pessoa_pelo_nome(nome) {
     try {
         CarregarDados()
-        let x = lista_clientes.find(cliente => cliente.nome === nome);
+        let x = lista_clientes.find(cliente => cliente.nome === nome) || null;
         return x;
     } catch (error) {
         alert(`Ocorreu um erro durante a busca: ${error}`);
@@ -273,7 +273,7 @@ function DiffDias(datacheckin, datacheckout) {
 function Login() {
     try {
         CarregarDados();  // Certifique-se de que os dados estão carregados.
-        let nome = (document.getElementById("Usuario").value).toUpperCase()
+        let nome = document.getElementById("Usuario").value;
         let senha = document.getElementById("Senha").value;
         let objeto = Encontrar_pessoa_pelo_nome(nome);
         if (objeto === null) {
@@ -302,7 +302,7 @@ function AdicionarReserva() {
     CarregarDados()
     let datacheckin = document.getElementById("checkin").value;
     let datacheckout = document.getElementById("checkout").value;
-    let dono = (document.getElementById("nomeReserva").value).toUpperCase()
+    let dono = document.getElementById("nomeReserva").value;
     let tipo = document.getElementById("tipo").value;
     let servico = document.getElementById("service").value
     if (!datacheckin || !datacheckout) {
@@ -441,7 +441,12 @@ function EstaDisponivel_print() {
 
                 if (status) {
                     let div = document.getElementById("vazia1");
-                    div.innerHTML = `<h1>Quarto número:${quarto.numero} do ${quarto.tipo} está liberado.</h2><br>`;
+                    if (tipo === "executivo_vista_mar") {
+                        div.innerHTML = `<h1>Quarto número:${x} do ${tipo.split('_').join(' ')} está liberado.</h2><br>`
+                    }
+                    else {
+                        div.innerHTML = `<h1>Quarto número:${x} do ${tipo} está liberado.</h2><br>`
+                    }    
                     aux = quarto.numero;
                     return status;
                 }
@@ -467,7 +472,7 @@ if (window.location.pathname.endsWith("logout.html")) {
 if (window.location.pathname.endsWith("login.html")) {
     CarregarDados();
 };
-if (window.location.pathname.endsWith("index2.html")) {
+if (window.location.pathname.endsWith("index.html")) {
     CarregarDados();
 };
 if (window.location.pathname.endsWith("cadastro.html")) {
@@ -487,7 +492,11 @@ function Retirada() {
         }
     if (validar) {
         let reserva = AcharReserva(numquarto, id, tipo)
-        reserva.preco= parseFloat(reserva.preco)+parseFloat(document.getElementById("kitkat").value)+parseFloat(document.getElementById("coca").value)
+        if (reserva===null){
+            alert("Essa reserva não existe")
+        }
+        else{
+            reserva.preco= parseFloat(reserva.preco)+parseFloat(document.getElementById("kitkat").value)+parseFloat(document.getElementById("coca").value)
         alert(`O preco a pagar é: ${reserva.preco}`)
         lista_historico.push(reserva);
         let index = lista_reservas[tipo].findIndex(item => item === reserva);
@@ -495,9 +504,11 @@ function Retirada() {
             lista_reservas[tipo].splice(index, 1);
             alert("Retirada Válida, volte sempre.\nO Hotel encantado agradece a sua estadia conosco.")
             SalvarDados();
-            window.location.href = 'index2.html'
+            window.location.href = 'index.html'
 
         }
+        }
+        
     } else {
         alert("Retirada Inválida, pois esse funcionário não existe.")
     }
@@ -511,11 +522,3 @@ function AcharReserva(NumQuarto, id, tipo) {
     }
     return null
 }
-document.querySelectorAll(".mudar-formulario").forEach((elemento) => {
-    elemento.addEventListener("click", () => {
-        document.getElementById("login").classList.toggle("formulario-visivel");
-        document.getElementById("registro").classList.toggle("formulario-visivel");
-        document.getElementById("mensagemLogin").classList.toggle("formulario-visivel");
-        document.getElementById("mensagemRegistro").classList.toggle("formulario-visivel");
-    });
-});
