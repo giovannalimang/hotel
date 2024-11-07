@@ -221,7 +221,7 @@ if (1==1){
 
 function Cadastro() {
     try {
-        let nome = document.getElementById("nome").value;
+        let nome = (document.getElementById("nome").value).toUpperCase()
         let senha = document.getElementById("senha").value;
         let endereco = document.getElementById("endereco").value;
         let contato = document.getElementById("contato").value;
@@ -273,7 +273,7 @@ function DiffDias(datacheckin, datacheckout) {
 function Login() {
     try {
         CarregarDados();  // Certifique-se de que os dados estão carregados.
-        let nome = document.getElementById("Usuario").value;
+        let nome = (document.getElementById("Usuario").value).toUpperCase()
         let senha = document.getElementById("Senha").value;
         let objeto = Encontrar_pessoa_pelo_nome(nome);
         if (objeto === null) {
@@ -302,7 +302,7 @@ function AdicionarReserva() {
     CarregarDados()
     let datacheckin = document.getElementById("checkin").value;
     let datacheckout = document.getElementById("checkout").value;
-    let dono = document.getElementById("nomeReserva").value;
+    let dono = (document.getElementById("nomeReserva").value).toUpperCase()
     let tipo = document.getElementById("tipo").value;
     let servico = document.getElementById("service").value
     if (!datacheckin || !datacheckout) {
