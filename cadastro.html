@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,52 +9,32 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <div class="form">
-        <form onsubmit="return Cadastro();"> <!-- Chama a função Cadastro ao enviar -->
-            <div class="form-header">
-                <div class="title">
-                    <h1>Cadastre-se</h1>
-                </div>
-            </div>
-            <a href="login.html" class="btn">Tela-Login</a>
-            <div class="input-group">
-                <div class="input-box">
-                    <label for="firstname"> Nome</label>
-                    <input id="nome" type="text" name="nome" placeholder="Digite seu primeiro nome" required>
-                </div>
-
-                <div class="input-box">
-                    <label for="endereco">Endereço</label>
-                    <input id="endereco" type="text" name="endereco" placeholder="Digite seu endereço" required>
-                </div>
-
-                <div class="input-box">
-                    <label for="contato">E-mail</label>
-                    <input id="contato" type="email" name="contato" placeholder="Digite seu e-mail" required>
-                </div>
-
-                <div class="input-box">
-                    <label for="id">CPF</label>
-                    <input id="id" type="number" name="id" placeholder="Digite seu CPF" required>
-                </div>
-
-                <div class="input-box">
-                    <label for="acompanhantes">Quantidade de acompanhantes</label>
-                    <input id="acompanhantes" type="number" name="acompanhantes" placeholder="Quantidade de acompanhantes" min="0" required>
-                </div>
-
-                <div class="input-box">
-                    <label for="senha">Senha</label>
-                    <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
-                </div>
-            </div>
-
-            <div class="continue-button">
-                <button type="button" onclick="Cadastro()">Continuar</button> <!-- Mantenha o tipo submit -->
-            </div>
-        </form>
+  <div class="container">
+    <div class="imagem">
+      <div class="mensagem" id="motivacionalCadastro">
+        <h2>Seja bem-vindo!</h2>
+      </div>
     </div>
-    <script src="script.js"></script>
+
+    <div class="formulario">
+      <div class="conteudo-formulario">
+        <form id="cadastro" class="formulario-visivel">
+          <h2>Cadastro</h2>
+          <h1>Crie sua conta</h1>
+          <input type="text" placeholder="Nome" id="nome" required>
+          <input type="text" placeholder="Endereço" id="endereco" required>
+          <input type="email" placeholder="E-mail" id="contato" required>
+          <input type="number" placeholder="CPF" id="id" required>
+          <input type="password" placeholder="Senha" id="senha" required>
+          <div class="login-button">
+            <button type="button" onclick="Cadastro()">Continuar</button>
+          </div>
+        </form>
+        <p>Já tem uma conta?</p>
+        <a href="login.html" class="btn">Volte para login</a>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
-

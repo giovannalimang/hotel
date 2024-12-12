@@ -65,20 +65,52 @@ class Funcionario extends Pessoa {
         this.#senha = senha;
     }
     getSenha() { return this.#senha; }
-    static toJSON(instance) {
-        return { ...Pessoa.toJSON(instance), senha:instance.#senha };
+    toJSON() {
+        return { ...super.toJSON(), senha: this.#senha };
     }
     static fromJSON(json) {
         return new Funcionario(json.nome, json.endereco, json.contato, json.senha);
     }
 }
 class Quarto {
+    numero;
+    tipo;
+    codigo;
+    preco;
+    dono;
     constructor(numero, tipo, codigo = null, preco, dono = null) {
         this.numero = numero;
         this.tipo = tipo;
         this.codigo = codigo;
         this.preco = preco;
         this.dono = dono;
+    }
+    getNumero() {
+        return this.numero;
+    }
+    getTipo() {
+        return this.tipo;
+    }
+    getCodigo() {
+        return this.codigo;
+    }
+    getPreco() {
+        return this.preco;
+    }
+    getDono() {
+        return this.dono;
+    }
+    static toJSON(quarto) {
+        return JSON.stringify({
+            numero: quarto.getNumero(),
+            tipo: quarto.getTipo(),
+            codigo: quarto.getCodigo(),
+            preco: quarto.getPreco(),
+            dono: quarto.getDono(),
+        });
+    }
+    static fromJSON(json) {
+        return new Quarto(json.numero, json.tipo, json.codigo, json.preco, json.dono);
     }
 }
 class Historico {
@@ -128,13 +160,57 @@ class Comanda {
     }
 }
 class Reserva {
+    checkin;
+    checkout;
+    id;
+    numquarto;
+    servico;
+    preco;
     constructor(checkin, checkout, id, numquarto, servico, preco) {
         this.checkin = new Date(checkin);
         this.checkout = new Date(checkout);
         this.id = id;
         this.numquarto = numquarto;
-        this.servico = servico
-        this.preco = preco
+        this.servico = servico;
+        this.preco = preco;
+    }
+    getCheckin() {
+        return this.checkin;
+    }
+    getCheckout() {
+        return this.checkout;
+    }
+    getId() {
+        return this.id;
+    }
+    getNumQuarto() {
+        return this.numquarto;
+    }
+    getServico() {
+        return this.servico;
+    }
+    getPreco() {
+        return this.preco;
+    }
+    static toJSON(reserva) {
+        return JSON.stringify({
+            checkin: reserva.getCheckin().toISOString(),
+            checkout: reserva.getCheckout().toISOString(),
+            id: reserva.getId(),
+            numquarto: reserva.getNumQuarto(),
+            servico: reserva.getServico(),
+            preco: reserva.getPreco(),
+        });
+    }
+    static fromJSON(json) {
+        return new Reserva(
+            json.checkin,
+            json.checkout,
+            json.id,
+            json.numquarto,
+            json.servico,
+            json.preco
+        );
     }
 }
 let teste
@@ -162,8 +238,8 @@ function SalvarDados() {
     sessionStorage.setItem('clientes', JSON.stringify(lista_clientes.map(cliente => Cliente.toJSON(cliente))));
     sessionStorage.setItem('funcionarios', JSON.stringify(lista_funcionario.map(funcionario => Funcionario.toJSON(funcionario))));
     sessionStorage.setItem('historico', JSON.stringify(lista_historico.map(historico => Historico.toJSON(historico))));
-    sessionStorage.setItem('lr', JSON.stringify(lista_reservas));
     sessionStorage.setItem('lq', JSON.stringify(lista_quartos));
+    sessionStorage.setItem('lr', JSON.stringify(lista_reservas));
 }
 function CarregarDados() {
     lista_clientes = (JSON.parse(sessionStorage.getItem('clientes')) || []).map(Cliente.fromJSON);
@@ -175,17 +251,6 @@ function CarregarDados() {
         executivo: [], executivo_vista_mar: [], familia: [], praiano: [], premium: [], luxo: []
     };
     lista_historico = (JSON.parse(sessionStorage.getItem('historico')) || []).map(Historico.fromJSON);
-}
-if (!sessionStorage.getItem("lq")){
-    for (let i = 1; i <= 10; i++) {
-        lista_quartos.executivo.push(new Quarto(i, "executivo", null,1, null));
-        lista_quartos.executivo_vista_mar.push(new Quarto(i, "executivo_vista_mar", null, 12, null));
-        lista_quartos.familia.push(new Quarto(i, "familia", null, 7, null));
-        lista_quartos.praiano.push(new Quarto(i, "praiano", null, 8, null));
-        lista_quartos.premium.push(new Quarto(i, "premium", null, 16, null));
-        lista_quartos.luxo.push(new Quarto(i, "luxo", null, 15, null));
-        SalvarDados()
-    }    
 }
 if (window.location.pathname.endsWith("logout.html")) {
     CarregarDados();
@@ -293,13 +358,23 @@ accordions.forEach(acco => {
         acco.classList.add('active');
     }
 });
+for (let i = 1; i <= 10; i++) {
+    lista_quartos.executivo.push(new Quarto(i, "executivo", null,1, null));
+    lista_quartos.executivo_vista_mar.push(new Quarto(i, "executivo_vista_mar", null, 12, null));
+    lista_quartos.familia.push(new Quarto(i, "familia", null, 7, null));
+    lista_quartos.praiano.push(new Quarto(i, "praiano", null, 8, null));
+    lista_quartos.premium.push(new Quarto(i, "premium", null, 16, null));
+    lista_quartos.luxo.push(new Quarto(i, "luxo", null, 15, null));
+    alert(JSON.stringify(lista_quartos.executivo))
+    SalvarDados()
+}
 
 
 if (1 == 1) {
-    lista_funcionario = [new Funcionario("Enzo", "Rua dos fodas 58", "+55 11 98168-5828","Papaya"),
-    new Funcionario("Gabrielly L. De Macedo", "Rua Das mina 2", "+55 11 99527-7430", "0"),
-    new Funcionario("Guilherme", "Rua joao batista alberti 88", "+55 11 99122-913", "1"),
-    new Funcionario("Giova", "Rua das mina 30", "+55 11 95559-3823",  "2")]
+    lista_funcionario = [new Funcionario("Enzo", "Rua dos fodas 58", "+55 11 98168-5828", Criptografia("Papaya")),
+    new Funcionario("Gabrielly L. De Macedo", "Rua Das mina 2", "+55 11 99527-7430", Criptografia("0")),
+    new Funcionario("Guilherme", "Rua joao batista alberti 88", "+55 11 99122-913", Criptografia("1")),
+    new Funcionario("Giova", "Rua das mina 30", "+55 11 95559-3823", Criptografia("2"))]
     SalvarDados()
 }
 
@@ -455,19 +530,24 @@ function Redirect_cadastro() {
 
 
 
-
 function AdicionarReserva() {
     CarregarDados()
-    let datacheckin = document.getElementById("checkin").value;
-    let datacheckout = document.getElementById("checkout").value;
-    let dono = document.getElementById("nomeReserva").value;
-    let tipo = document.getElementById("tipo").value;
-    let servico = document.getElementById("service").value
+    let datacheckin = verificar_entrada(document.getElementById("checkin").value);
+    let datacheckout = verificar_entrada(document.getElementById("checkout").value);
+    let dono = verificar_entrada(document.getElementById("nomeReserva").value);
+    let tipo = verificar_entrada(document.getElementById("tipo").value);
+    let servico = verificar_entrada(document.getElementById("service").value)
+    let email = verificar_entrada(document.getElementById("emailReserva").value)
+    if (!email) {
+        alert("Digite o seu email")
+        return
+    }
     if (!datacheckin || !datacheckout) {
         alert("Digite datas");
         return;
     }
     alert("Verificando disponibilidade...");
+    alert(tipo)
     let x = EstaDisponivel(datacheckin, datacheckout, tipo);
 
     if (x) {
@@ -524,10 +604,10 @@ function AdicionarReserva() {
                 lista_reservas[tipo].push(reserva);
                 let div = document.getElementById("vazia");
                 if (tipo === "executivo_vista_mar") {
-                    div.innerHTML = `<h1>Quarto número:${x} do ${tipo.split('_').join(' ')} está liberado.</h2><br>`
+                    div.innerHTML = `<h1>Quarto número:${x} do ${tipo.split('_').join(' ')} está liberado ${y.getNome()}.</h2><br>`
                 }
                 else {
-                    div.innerHTML = `<h1>Quarto número:${x} do ${tipo} está liberado.</h2><br>`
+                    div.innerHTML = `<h1>Quarto número:${x} do ${tipo} está liberado ${y.getNome()}.</h2><br>`
                 }
 
                 SalvarDados();
@@ -552,17 +632,21 @@ function EstaDisponivel(datacheckin, datacheckout, tipo) {
     let aux = null;
 
     alert("Iniciando verificação de disponibilidade...");
+    
+    alert(tipo)
+    alert(JSON.stringify(lista_quartos[tipo]))
     if (!lista_quartos[tipo]) {
         alert("Tipo de quarto inválido.");
     }
+    alert("a")
     for (let quarto of lista_quartos[tipo]) {
-        alert(`Verificando quarto número: ${quarto.numero}`);
+        alert(`Verificando quarto número: ${quarto.getNumero()}`);
         let status = true
         for (let reserva of lista_reservas[tipo]) {
-            alert(`Verificando reservaa...`);
-            if (reserva.numquarto === quarto.numero) {
-                alert(`Conflito encontrado com a reserva: ${reserva.numquarto}`);
-                if (checkin <= new Date(reserva.checkout) && checkout >= new Date(reserva.checkin)) {
+            alert(`Verificando reserva...`);
+            if (reserva.getNumQuarto() === quarto.getNumero()) {
+                alert(`Conflito encontrado com a reserva: ${reserva.getNumQuarto()}`);
+                if (checkin <= new Date(reserva.getCheckout()) && checkout >= new Date(reserva.getCheckin())) {
                     alert("Quarto não disponível, conflito de datas.");
                     status = false;
                     break;
@@ -571,8 +655,8 @@ function EstaDisponivel(datacheckin, datacheckout, tipo) {
         }
 
         if (status) {
-            alert(`Quarto ${quarto.numero} está disponível.`);
-            aux = quarto.numero;
+            alert(`Quarto ${quarto.getNumero()} está disponível.`);
+            aux = quarto.getNumero();
             return aux;
         }
     }
@@ -589,22 +673,26 @@ function EstaDisponivel_print() {
             for (let quarto of lista_quartos[tipo]) {
                 let status = true;
                 for (let reserva of lista_reservas[tipo]) {
-                    if (reserva.numquarto === quarto.numero) {
-                        if (checkin <= reserva.checkout && checkout >= reserva.checkin) {
+                    if (reserva.getNumQuarto() === quarto.getNumero()) {
+                        if (checkin <= reserva.getCheckout() && checkout >= reserva.getCheckin()) {
                             status = false;
                             break;
                         }
                     }
                 }
+                alert(status)
                 if (status) {
                     let div = document.getElementById("vazia1");
+                    alert(div.innerHTML)
                     if (tipo === "executivo_vista_mar") {
-                        div.innerHTML = `<h1>Quarto número:${quarto.numero} do ${tipo.split('_').join(' ')} está liberado.</h2><br>`
+                        div.innerHTML = `<h1>Quarto número:${quarto.getNumero()} do ${tipo.split('_').join(' ')} está liberado.</h2><br>`
                     }
                     else {
-                        div.innerHTML = `<h1>Quarto número:${quarto.numero} do ${tipo} está liberado.</h2><br>`
+                        div.innerHTML = `<h1>Quarto número:${quarto.getNumero()} do ${tipo} está liberado.</h2><br>`
+                        alert(div.innerHTML)
                     }
-                    aux = quarto.numero;
+                    alert(div.innerHTML)
+                    aux = quarto.getNumero();
                     return status;
                 }
             }
@@ -618,6 +706,9 @@ function EstaDisponivel_print() {
     let div = document.getElementById("vazia1");
     div.innerHTML = `<h1>Data está inválida.</h2><br>`;
     return false
+
+
+
 }
 
 
@@ -626,13 +717,13 @@ function Retirada() {
     let id = verificar_entrada(document.getElementById("CPF").value)
     let tipo = verificar_entrada(document.getElementById("tipo").value)
     let numquarto = verificar_entrada(document.getElementById("NumQuarto").value)
-    let func = (verificar_entrada(document.getElementById("SenhaFuncionario").value))
+    let func = Criptografia(verificar_entrada(document.getElementById("SenhaFuncionario").value))
     let validar = false
-    for (let funcionario of lista_funcionario){
-        if (func == funcionario.getNome()) {
+    for (let funcionario of lista_funcionario)
+        if (func == funcionario.getSenha()) {
             validar = true
+            break
         }
-    }
     if (validar) {
         let reserva = AcharReserva(numquarto, id, tipo)
         if (reserva === null) {
@@ -661,7 +752,7 @@ function Retirada() {
                     break;
             }
             let precao = 0
-            switch (reserva.servico) {
+            switch (reserva.getServico()) {
                 case "basic":
                     precao = 100;
                     break;
@@ -681,13 +772,13 @@ function Retirada() {
                     precao = 600;
                     break;
             }
-            reserva.preco = parseFloat(reserva.preco) + (6 * parseFloat(verificar_entrada(document.getElementById("quant_doce").value))) + (8 * parseFloat(verificar_entrada(document.getElementById("quant_bebida").value)))
-            let dias_reserva = DiffDias(reserva.checkin, reserva.checkout)
+            reserva.getPreco() = parseFloat(reserva.getPreco()) + (6 * parseFloat(verificar_entrada(document.getElementById("quant_doce").value))) + (8 * parseFloat(verificar_entrada(document.getElementById("quant_bebida").value)))
+            let dias_reserva = DiffDias(reserva.getCheckin(), reserva.getCheckout())
             let tipinho = tipo
             if (tipinho === "executivo_vista_mar") {
                 tipinho = "executivo vista mar"
             }
-            alert(`O preco a pagar é: R$${reserva.preco} pois:\n Você ficou ${dias_reserva} dia(s) e o tipo do seu quarto é:${tipinho} \n Que custa:R$ ${precinho}\n Já o serviço escolhido - ${reserva.servico} custa:R$ ${precao} \n e os produtos consumidos do frigobar: R$ ${(6 * parseFloat(verificar_entrada(document.getElementById("quant_doce").value))) + (8 * parseFloat(verificar_entrada(document.getElementById("quant_bebida").value)))}`)
+            alert(`O preco a pagar é: R$${reserva.getPreco()} pois:\n Você ficou ${dias_reserva} dia(s) e o tipo do seu quarto é:${tipinho} \n Que custa:R$ ${precinho}\n Já o serviço escolhido - ${reserva.getServico()} custa:R$ ${precao} \n e os produtos consumidos do frigobar: R$ ${(6 * parseFloat(verificar_entrada(document.getElementById("quant_doce").value))) + (8 * parseFloat(verificar_entrada(document.getElementById("quant_bebida").value)))}`)
             lista_historico.push(reserva);
             let index = lista_reservas[tipo].findIndex(item => item === reserva);
             if (index !== -1) {
@@ -706,7 +797,7 @@ function Retirada() {
 }
 function AcharReserva(NumQuarto, id, tipo) {
     for (let reserva of lista_reservas[tipo]) {
-        if (reserva.numquarto == NumQuarto && reserva.id == id) {
+        if (reserva.getNumQuarto() == NumQuarto && reserva.getId() == id) {
             return reserva
         }
     }

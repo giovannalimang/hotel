@@ -3,33 +3,57 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Hotel Encantado</title>
+    <title>Hotel Website</title>
+    <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="login.css">
+    <!-- swiper js cdn link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- custom css link -->
+    <link rel="stylesheet" href="logout.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="imagem">
-            <div class="mensagem" id="motivacionalLogin">
-                <h2></h2>
-            </div>
-            <div class="mensagem" id="motivacionalRegistro">
-                <h2>Seja bem-vindo!</h2>
-            </div>
-        </div>
-        <div id="vazia2"></div>
 
-        <div class="formulario">
-            <div class="conteudo-formulario">
-                <form id="login" class="formulario-visivel">
-                    <h2>Checkout</h2>
-                    <div class="icones">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-google"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
+    <!-- header -->
+
+    <header class="header">
+        <a href="#" class="logo"> <i class="fas fa-hotel"></i> hotel Encantado </a>
+        <nav class="navbar">
+            <a href="#logout">logout</a>
+            <a href="#logout">sobre nós</a>
+            <a href="#logout">quartos</a>
+            <a href="#galeria">galeria</a>
+            <a href="##logout">avaliações</a>
+            <a href="#logout" class="btn">logout</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+
+    <!-- Logout Section -->
+    <section class="logout" id="logout">
+        <h1 class="heading">Logout</h1>
+        <form id="reservaForm">
+            <div class="container">
+                <div class="box">
+                    <p>Nome <span>*</span></p>
+                    <input type="text" class="input" id="nomeReserva" placeholder="Seu nome">
+                </div>
+                <div class="box">
+                    <p>CPF <span>*</span></p>
+                    <input type="text" class="input" placeholder="CPF" id="CPF">
+                </div>
+                <div class="box">
+                    <p>Número do quarto <span>*</span></p>
+                    <input type="text" class="input" placeholder="Número Quarto" id="NumQuarto">
+                </div>
+                <div class="box">
+                    <p>Senha do Funcionário <span>*</span></p>
+                    <input type="text" placeholder="Senha funcionario" class="input" id="SenhaFuncionario">
+                </div>
+                <div class="box">
+                    <p>Tipo do Quarto <span>*</span></p>
                     <select name="type" class="input" id="tipo">
                         <option value="executivo">quarto executivo</option>
                         <option value="executivo_vista_mar">quarto executivo vista mar</option>
@@ -38,31 +62,41 @@
                         <option value="luxo">quarto luxo</option>
                         <option value="praiano">bangâlo praiano</option>
                     </select>
-                    <input type="text" placeholder="CPF" id="CPF" required>
-                    <input type="text" placeholder="Número Quarto" id="NumQuarto" required>
-                    <input type="text" placeholder="Senha funcionario" id="SenhaFuncionario" required>
-                    <h3> Frigobar consumo</h3>
-                    <select name="type" class="input" id="kitkat">
-                        <option value="0">0 kitkat</option>
-                        <option value="7">1 kitkat</option>
-                        <option value="14">2 kitkat</option>
-                        <option value="21">3 kitkat</option>
-                    </select>
-                    <select name="type" class="input" id="coca">
-                        <option value="10">0 Coca</option>
-                        <option value="10">1 Coca</option>
-                        <option value="20">2 Coca</option>
-                        <option value="30">3 Coca</option>
-                    </select>
-                    <div class="login-button">
-                        <button type="button" onclick="Retirada()">Realizar logout</button>
+                </div>
+                <div class="container">
+                    <div class="box">
+                        <p>Quantidade de doces</p>
+                        <input type="number" name="quantidade_doces" min="0" id="quant_doce">
                     </div>
-                </form>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="doces" value="chocolate">Chocolate</label>
+                        <label><input type="checkbox" name="doces" value="bala">Bala</label>
+                        <label><input type="checkbox" name="doces" value="pirulito">Pirulito</label>
+                        <label><input type="checkbox" name="doces" value="paçoca">Paçoca</label>
+                    </div>
+                </div>
+                <div class="box">
+                    <p>Quantidade de bebidas:</p>
+                    <input type="number" name="quantidade_bebidas" min="0" id="quant_bebida">
+                    <p>Escolha uma bebida:</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="bebidas" value="agua">Água</label>
+                        <label><input type="checkbox" name="bebidas" value="suco">Suco</label>
+                        <label><input type="checkbox" name="bebidas" value="refrigerante">Refrigerante</label>
+                        <label><input type="checkbox" name="bebidas" value="café">Café</label>
+                        <label><input type="checkbox" name="bebidas" value="chá">Chá</label>
+                        <label><input type="checkbox" name="bebidas" value="cerveja">Cerveja</label>
+                    </div>
+                    <input type="button" value="Logout" class="btn" onclick="Retirada()">
+                </div>
+                
             </div>
-        </div>
-    </div>
-
+        </form>
+    </section>
     <script src="script.js"></script>
+    
 </body>
 
 </html>
+        
+  
