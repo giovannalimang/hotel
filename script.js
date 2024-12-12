@@ -296,10 +296,10 @@ accordions.forEach(acco => {
 
 
 if (1 == 1) {
-    lista_funcionario = [new Funcionario("Enzo", "Rua dos fodas 58", "+55 11 98168-5828","Papaya"),
-    new Funcionario("Gabrielly L. De Macedo", "Rua Das mina 2", "+55 11 99527-7430", "0"),
-    new Funcionario("Guilherme", "Rua joao batista alberti 88", "+55 11 99122-913", "1"),
-    new Funcionario("Giova", "Rua das mina 30", "+55 11 95559-3823",  "2")]
+    lista_funcionario = [new Funcionario(Criptografia("Papaya"), "Rua dos fodas 58", "+55 11 98168-5828","Enzo"),
+    new Funcionario(Criptografia("1"), "Rua Das mina 2", "+55 11 99527-7430", "gaby"),
+    new Funcionario(Criptografia("2"), "Rua joao batista alberti 88", "+55 11 99122-913", "Guilherme"),
+    new Funcionario(Criptografia("3"), "Rua das mina 30", "+55 11 95559-3823",  "Giova")]
     SalvarDados()
 }
 
@@ -626,7 +626,7 @@ function Retirada() {
     let id = verificar_entrada(document.getElementById("CPF").value)
     let tipo = verificar_entrada(document.getElementById("tipo").value)
     let numquarto = verificar_entrada(document.getElementById("NumQuarto").value)
-    let func = (verificar_entrada(document.getElementById("SenhaFuncionario").value))
+    let func = Criptografia(verificar_entrada(document.getElementById("SenhaFuncionario").value))
     let validar = false
     for (let funcionario of lista_funcionario){
         if (func == funcionario.getNome()) {
